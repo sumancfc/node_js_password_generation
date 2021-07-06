@@ -2,6 +2,7 @@ const program = require('commander')
 const chalk = require('chalk')
 const clipboard = require('clipboardy')
 const createPassword = require("./helpers/createPassword")
+const savePassword = require("./helpers/savePassword")
 
 program.version('1.0.0').description('Generate password using node js').
 
@@ -15,7 +16,12 @@ program
 // console.log(program.opts())
 const { length, save, symbols, numbers } = program.opts()
 
-const passwordGenerated = createPassword(length,symbols,numbers)
+const passwordGenerated = createPassword(length, symbols, numbers)
+
+if(save){
+   savePassword(passwordGenerated)
+}
+
 
 clipboard.writeSync(passwordGenerated)
 
