@@ -1,4 +1,5 @@
 const program = require('commander')
+const chalk = require('chalk')
 const createPassword = require("./helpers/createPassword")
 
 program.version('1.0.0').description('Generate password using node js').
@@ -15,5 +16,5 @@ const { length, save, symbols, numbers } = program.opts()
 
 const passwordGenerated = createPassword(length,symbols,numbers)
 
-console.log(passwordGenerated)
+console.log(chalk.blueBright('Your Password is: ') + chalk.green(passwordGenerated))
 
