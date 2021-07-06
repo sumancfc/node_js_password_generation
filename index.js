@@ -1,5 +1,6 @@
 const program = require('commander')
 const chalk = require('chalk')
+const clipboard = require('clipboardy')
 const createPassword = require("./helpers/createPassword")
 
 program.version('1.0.0').description('Generate password using node js').
@@ -16,5 +17,9 @@ const { length, save, symbols, numbers } = program.opts()
 
 const passwordGenerated = createPassword(length,symbols,numbers)
 
+clipboard.writeSync(passwordGenerated)
+
 console.log(chalk.blueBright('Your Password is: ') + chalk.green(passwordGenerated))
+
+console.log(chalk.yellow('Password copied to clipboard'))
 
