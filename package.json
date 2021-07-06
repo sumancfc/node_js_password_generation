@@ -1,0 +1,31 @@
+{
+  "name": "nodejs_generate_password",
+  "version": "1.0.0",
+  "description": "Simple password generation using node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumancfc/node_js_password_generation.git"
+  },
+  "keywords": [
+    "password",
+    "generation",
+    "node",
+    "js",
+    "password"
+  ],
+  "author": "Suman Shrestha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumancfc/node_js_password_generation/issues"
+  },
+  "homepage": "https://github.com/sumancfc/node_js_password_generation#readme",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "clipboardy": "^2.3.0",
+    "commander": "^8.0.0"
+  }
+}
