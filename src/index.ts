@@ -17,7 +17,7 @@ program
 
 const options = program.opts();
 
-const passwordLength = parseInt(options.length as string, 10);
+const passwordLength = parseInt(options.length as string, 12);
 const includeSymbols = options.symbols !== false;
 const includeNumbers = options.numbers !== false;
 
