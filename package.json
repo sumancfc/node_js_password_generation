@@ -2,9 +2,11 @@
   "name": "nodejs_generate_password",
   "version": "1.0.0",
   "description": "Simple password generation using node js",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,8 +26,12 @@
   },
   "homepage": "https://github.com/sumancfc/node_js_password_generation#readme",
   "dependencies": {
-    "chalk": "^4.1.1",
+    "chalk": "^4.1.2",
     "clipboardy": "^2.3.0",
-    "commander": "^8.0.0"
+    "commander": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
   }
 }
