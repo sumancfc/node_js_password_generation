@@ -6,12 +6,13 @@ const numbers = "0123456789";
 const createPassword = (
   length: number,
   hasSymbols: boolean,
-  hasNumbers: boolean
+  hasNumbers: boolean,
+  customSet?: string
 ): string => {
-  let characters = alphabets;
+  let characters = customSet || alphabets;
 
-  if (hasSymbols) characters += symbols;
-  if (hasNumbers) characters += numbers;
+  if (hasSymbols && !customSet) characters += symbols;
+  if (hasNumbers && !customSet) characters += numbers;
 
   return generatePassword(length, characters);
 };

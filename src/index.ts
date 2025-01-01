@@ -14,6 +14,7 @@ program
   .option("-s, --save", "Save the password")
   .option("--no-symbols", "Remove symbols from password")
   .option("--no-numbers", "Remove numbers from password")
+  .option("-c, --custom <string>", "Custom character set")
   .parse(process.argv);
 
 const options = program.opts();
@@ -21,11 +22,13 @@ const options = program.opts();
 const passwordLength = parseInt(options.length as string, 12);
 const includeSymbols = options.symbols !== false;
 const includeNumbers = options.numbers !== false;
+const customSet = options.custom;
 
 const passwordGenerated = createPassword(
   passwordLength,
   includeSymbols,
-  includeNumbers
+  includeNumbers,
+  customSet
 );
 
 // Check password strength
