@@ -1,8 +1,7 @@
 const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-const symbols = "!@#$%^&*()_+=";
-const numbers = "0123456789";
+const defaultSymbols = "!@#$%^&*()_+=";
+const defaultNumbers = "0123456789";
 
-// Create Password
 const createPassword = (
   length: number,
   hasSymbols: boolean,
@@ -11,13 +10,18 @@ const createPassword = (
 ): string => {
   let characters = customSet || alphabets;
 
-  if (hasSymbols && !customSet) characters += symbols;
-  if (hasNumbers && !customSet) characters += numbers;
+  if (hasSymbols && !customSet) characters += defaultSymbols;
+  if (hasNumbers && !customSet) characters += defaultNumbers;
+
+  if (customSet) {
+    if (hasSymbols)
+      characters += customSet.match(/[^A-Za-z0-9]/g)?.join("") || "";
+    if (hasNumbers) characters += customSet.match(/[0-9]/g)?.join("") || "";
+  }
 
   return generatePassword(length, characters);
 };
 
-// Generate Password
 const generatePassword = (length: number, characters: string): string => {
   let password = "";
 

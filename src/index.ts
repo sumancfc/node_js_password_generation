@@ -4,6 +4,7 @@ import clipboardy from "clipboardy";
 import createPassword from "./helpers/createPassword";
 import savePassword from "./helpers/savePassword";
 import calculateStrength from "./helpers/calculateStrength";
+import "./server";
 
 const program = new Command();
 

@@ -4,9 +4,12 @@
   "description": "Simple password generation using node js",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "node dist/index.js"
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc && npm run copy-assets",
+    "copy-assets": "xcopy src\\public dist\\public /E /I /Y && xcopy src\\views dist\\views /E /I /Y",
+    "start": "nodemon dist/index.js",
+    "dev": "nodemon src/index.ts --exec ts-node -r tsconfig-paths/register",
+    "compile-client": "tsc src/public/script.ts --outDir src/public"
   },
   "repository": {
     "type": "git",
@@ -26,12 +29,22 @@
   },
   "homepage": "https://github.com/sumancfc/node_js_password_generation#readme",
   "dependencies": {
+    "body-parser": "^1.20.3",
     "chalk": "^4.1.2",
     "clipboardy": "^2.3.0",
-    "commander": "^13.0.0"
+    "commander": "^13.0.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "@types/node": "^22.10.2",
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.3",
+    "nodemon": "^3.1.9",
+    "rimraf": "^6.0.1",
     "typescript": "^5.7.2"
   }
 }

@@ -9,8 +9,8 @@ node_modules/
 /coverage
 
 # production
-build
-dist
+build/
+dist/
 
 # misc
 .DS_Store
@@ -23,4 +23,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.txt
+*.txt
+*.js
