@@ -6,6 +6,8 @@ A simple Node.js project to generate secure passwords with customizable options.
 
 - Generate passwords with customizable length
 - Option to include/exclude symbols and numbers
+- Customizable character sets
+- Password strength indicator
 - Save generated passwords to a file
 - Copy passwords to the clipboard
 
@@ -31,7 +33,7 @@ A simple Node.js project to generate secure passwords with customizable options.
 
 ## Usage
 
-1. Build the Project 
+1. Build the Project
 
    ```sh
    npm run build
@@ -40,7 +42,7 @@ A simple Node.js project to generate secure passwords with customizable options.
 2. Run the project with the desired options:
 
    ```sh
-   npm start -- -l <length> --no-symbols --no-numbers -s
+   npm start -- -l <length> --no-symbols --no-numbers -s -c <customSet>
    ```
 
 ### Options
@@ -49,21 +51,32 @@ A simple Node.js project to generate secure passwords with customizable options.
 - `--no-symbols`: Remove symbols from the password
 - `--no-numbers`: Remove numbers from the password
 - `-s, --save`: Save the password to `generatedPasswords.txt`
+- `-c, --custom <string>`: Custom character set
+
+## Password Strength Indicator
+
+The generated password's strength is displayed based on the following criteria:
+
+- Very Weak
+- Weak
+- Moderate
+- Strong
+- Very Strong
 
 ## Project Structure
 
-   ```sh
-   node_js_password_generation/
-       ├── dist/                  # Compiled JavaScript files
-       ├── src/                   # Source files
-       │   ├── helpers/           # Helper functions
-       │   │   ├── createPassword.ts
-       │   │   └── savePassword.ts
-       │   └── index.ts           # Main entry point
-       ├── generatedPasswords.txt # File to save generated passwords
-       ├── .gitignore
-       ├── package.json
-       ├── README.md
-       └── tsconfig.json
-   ```
-
+```sh
+node_js_password_generation/
+    ├── dist/                  # Compiled JavaScript files
+    ├── src/                   # Source files
+    │   ├── helpers/           # Helper functions
+    │   │   ├── createPassword.ts
+    │   │   └── savePassword.ts
+    │   │   └── calculateStrength.ts
+    │   └── index.ts           # Main entry point
+    ├── generatedPasswords.txt # File to save generated passwords
+    ├── .gitignore
+    ├── package.json
+    ├── README.md
+    └── tsconfig.json
+```
