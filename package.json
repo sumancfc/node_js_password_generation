@@ -9,7 +9,7 @@
     "copy-assets": "xcopy src\\public dist\\public /E /I /Y && xcopy src\\views dist\\views /E /I /Y",
     "start": "nodemon dist/index.js",
     "dev": "nodemon src/index.ts --exec ts-node -r tsconfig-paths/register",
-    "compile-client": "tsc src/public/script.ts --outDir src/public"
+    "compile-client": "tsc src/public/script.ts --outDir dist/public"
   },
   "repository": {
     "type": "git",

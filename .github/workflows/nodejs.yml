@@ -27,3 +27,9 @@ jobs:
 
       - name: Compile frontend script
         run: npm run compile-client
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: dist/**
