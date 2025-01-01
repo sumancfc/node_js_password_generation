@@ -27,6 +27,3 @@ jobs:
 
       - name: Compile frontend script
         run: npm run compile-client
-
-      - name: Run Project
-        run: npm start
