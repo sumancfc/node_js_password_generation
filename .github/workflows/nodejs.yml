@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Node-js-password-generator CI
 
 on:
   push:
@@ -31,5 +31,9 @@ jobs:
       - name: Archive build artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: build-artifacts
-          path: dist/**
+          name: password-generator
+          path: |
+            dist/
+            .gitignore
+            package.json
+            README.md
