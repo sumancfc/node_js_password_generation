@@ -6,7 +6,7 @@ A simple Node.js project to generate secure passwords with customizable options.
 
 - Generate passwords with customizable length
 - Option to include/exclude symbols and numbers
-- Customizable character sets
+- Customizable character sets, including specific symbols and numbers
 - Password strength indicator
 - Save generated passwords to a file
 - Copy passwords to the clipboard
@@ -39,7 +39,13 @@ A simple Node.js project to generate secure passwords with customizable options.
    npm run build
    ```
 
-2. Run the project with the desired options:
+2. Compile the frontend script
+
+   ```sh
+   npm run compile-client
+   ```
+
+3. Run the project with the desired options:
 
    ```sh
    npm start -- -l <length> --no-symbols --no-numbers -s -c <customSet>
@@ -67,16 +73,22 @@ The generated password's strength is displayed based on the following criteria:
 
 ```sh
 node_js_password_generation/
-    ├── dist/                  # Compiled JavaScript files
-    ├── src/                   # Source files
-    │   ├── helpers/           # Helper functions
-    │   │   ├── createPassword.ts
-    │   │   └── savePassword.ts
-    │   │   └── calculateStrength.ts
-    │   └── index.ts           # Main entry point
-    ├── generatedPasswords.txt # File to save generated passwords
-    ├── .gitignore
-    ├── package.json
-    ├── README.md
-    └── tsconfig.json
+      ├── dist/                  # Compiled JavaScript files
+      ├── src/                   # Source files
+      │   ├── helpers/           # Helper functions
+      │   │   ├── calculateStrength.ts
+      │   │   ├── createPassword.ts
+      │   │   └── savePassword.ts
+      │   ├── public/            # Public assets (for frontend)
+      │   │   ├── style.css
+      │   │   └── script.ts
+      │   ├── views/             # EJS templates
+      │   │   └── index.ejs
+      │   └── index.ts           # Main entry point
+      │   └── server.ts          # Server setup
+      ├── generatedPasswords.txt # File to save generated passwords
+      ├── .gitignore
+      ├── package.json
+      ├── README.md
+      └── tsconfig.json
 ```
