@@ -3,6 +3,7 @@ import chalk from "chalk";
 import clipboardy from "clipboardy";
 import createPassword from "./helpers/createPassword";
 import savePassword from "./helpers/savePassword";
+import calculateStrength from "./helpers/calculateStrength";
 
 const program = new Command();
 
@@ -27,6 +28,9 @@ const passwordGenerated = createPassword(
   includeNumbers
 );
 
+// Check password strength
+const passwordStrength = calculateStrength(passwordGenerated);
+
 if (options.save) {
   savePassword(passwordGenerated);
 }
@@ -38,3 +42,4 @@ console.log(
 );
 
 console.log(chalk.yellow("Password copied to clipboard"));
+console.log(chalk.magenta(`Password strength: ${passwordStrength}`));
