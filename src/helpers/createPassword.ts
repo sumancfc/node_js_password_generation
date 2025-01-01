@@ -2,6 +2,7 @@ const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 const defaultSymbols = "!@#$%^&*()_+=";
 const defaultNumbers = "0123456789";
 
+// Create Password
 const createPassword = (
   length: number,
   hasSymbols: boolean,
@@ -22,6 +23,7 @@ const createPassword = (
   return generatePassword(length, characters);
 };
 
+// Generate Password
 const generatePassword = (length: number, characters: string): string => {
   let password = "";
 

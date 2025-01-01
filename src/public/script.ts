@@ -13,6 +13,9 @@ document
     ).checked;
     const customSet = (document.getElementById("customSet") as HTMLInputElement)
       .value;
+    const saveToFile = (
+      document.getElementById("saveToFile") as HTMLInputElement
+    ).checked;
 
     const response = await fetch("/generate", {
       method: "POST",
@@ -24,6 +27,7 @@ document
         includeSymbols,
         includeNumbers,
         customSet,
+        saveToFile,
       }),
     });
 

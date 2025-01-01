@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import path from "path";
 import createPassword from "./helpers/createPassword";
+import savePassword from "./helpers/savePassword";
 
 const app = express();
 const port = 3000;
@@ -19,13 +20,20 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.post("/generate", (req: Request, res: Response) => {
-  const { length, includeSymbols, includeNumbers, customSet } = req.body;
+  const { length, includeSymbols, includeNumbers, customSet, saveToFile } =
+    req.body;
   const password = createPassword(
     length,
     includeSymbols,
     includeNumbers,
     customSet
   );
+
+  if (saveToFile) {
+    console.log(`Saving password: ${password}`);
+    savePassword(password);
+  }
+
   res.json({ password });
 });
 
