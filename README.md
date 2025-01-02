@@ -83,24 +83,27 @@ This project includes a comprehensive set of tests to ensure functionality and r
 
 ```sh
 node_js_password_generation/
-      ├── dist/                  # Compiled JavaScript files
-      ├── src/                   # Source files
-      │   ├── __tests__/         # Test files
+      ├── dist/                   # Compiled JavaScript files
+      ├── src/                    # Source files
+      │   ├── __tests__/          # Test files
+      │   │   ├── calculateStrength.test.ts
       │   │   ├── createPassword.test.ts
-      │   ├── helpers/           # Helper functions
+      │   │   ├── server.test.ts
+      │   ├── helpers/            # Helper functions
       │   │   ├── calculateStrength.ts
       │   │   ├── createPassword.ts
-      │   │   └── savePassword.ts
-      │   ├── public/            # Public assets (for frontend)
+      │   │   ├── savePassword.ts
+      │   ├── public/             # Public assets (for frontend)
+      │   │   ├── script.ts
       │   │   ├── style.css
-      │   │   └── script.ts
-      │   ├── views/             # EJS templates
-      │   │   └── index.ejs
-      │   └── index.ts           # Main entry point
-      │   └── server.ts          # Server setup
-      ├── generatedPasswords.txt # File to save generated passwords
+      │   ├── views/              # EJS templates
+      │   │   ├── index.ejs
+      │   ├── app.ts              # Express app setup
+      │   ├── index.ts            # Main entry point
+      │   ├── server.ts           # Server listener
       ├── .gitignore
-      ├── jest.config.ts         # Jest configuration file
+      ├── jest.config.ts          # Jest configuration file
+      ├── package-lock.json
       ├── package.json
       ├── README.md
       └── tsconfig.json
