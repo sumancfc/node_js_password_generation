@@ -20,20 +20,31 @@ const createPassword = (
     if (hasNumbers) characters += customSet.match(/[0-9]/g)?.join("") || "";
   }
 
-  return generatePassword(length, characters);
-};
-
-// Generate Password
-const generatePassword = (length: number, characters: string): string => {
+  // Ensure inclusion of specified characters
   let password = "";
+  if (!customSet) {
+    if (hasNumbers)
+      password += defaultNumbers.charAt(
+        Math.floor(Math.random() * defaultNumbers.length)
+      );
+    if (hasSymbols)
+      password += defaultSymbols.charAt(
+        Math.floor(Math.random() * defaultSymbols.length)
+      );
+  }
 
-  for (let i = 0; i < length; i++) {
+  // Generate remaining password
+  for (let i = password.length; i < length; i++) {
     password += characters.charAt(
       Math.floor(Math.random() * characters.length)
     );
   }
 
-  return password;
+  // Shuffle password to avoid predictable patterns
+  return password
+    .split("")
+    .sort(() => Math.random() - 0.5)
+    .join("");
 };
 
 export default createPassword;
