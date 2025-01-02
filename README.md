@@ -2,6 +2,19 @@
 
 A simple Node.js project to generate secure passwords with customizable options. This project uses TypeScript, Commander.js, Chalk, and Clipboardy.
 
+## Table of Contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Options](#options)
+- [Password Strength Indicator](#password-strength-indicator)
+- [Tests](#tests)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Features
 
 - Generate passwords with customizable length
@@ -108,3 +121,17 @@ node_js_password_generation/
       ├── README.md
       └── tsconfig.json
 ```
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. **Fork the Project**
+2. **Create your Feature Branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your Changes** (`git commit -m 'Add some AmazingFeature'`)
+4. **Push to the Branch** (`git push -u origin feature/AmazingFeature`)
+5. **Open a Pull Request**
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
