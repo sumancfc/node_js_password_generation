@@ -69,12 +69,24 @@ The generated password's strength is displayed based on the following criteria:
 - Strong
 - Very Strong
 
+## Tests
+
+This project includes a comprehensive set of tests to ensure functionality and reliability. The tests cover various aspects of password generation, including length, symbols, numbers, custom character sets, and password strength.
+
+1. Run the tests
+
+   ```sh
+   npm test
+   ```
+
 ## Project Structure
 
 ```sh
 node_js_password_generation/
       ├── dist/                  # Compiled JavaScript files
       ├── src/                   # Source files
+      │   ├── __tests__/         # Test files
+      │   │   ├── createPassword.test.ts
       │   ├── helpers/           # Helper functions
       │   │   ├── calculateStrength.ts
       │   │   ├── createPassword.ts
@@ -88,6 +100,7 @@ node_js_password_generation/
       │   └── server.ts          # Server setup
       ├── generatedPasswords.txt # File to save generated passwords
       ├── .gitignore
+      ├── jest.config.ts         # Jest configuration file
       ├── package.json
       ├── README.md
       └── tsconfig.json
